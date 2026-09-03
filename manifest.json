@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "tiho.omagemba",
+  "name": "OmaGemba",
+  "version": "1.0.0",
+  "author": "Tiho",
+  "license": "MIT",
+  "description": "Observe Muda, Mura, and Muri where work actually happens.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "OmaGemba",
+    "description": "Log friction, expose its pattern, and target one countermeasure.",
+    "category": "Productivity",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
