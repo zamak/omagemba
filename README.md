@@ -50,6 +50,14 @@ All data stays in:
 OmaGemba retains up to 500 observations and 100 wins. It runs with your user
 permissions and does not modify shell configuration directly.
 
+State is written through Quickshell's `FileView` with `atomicWrites`, so a
+failed or interrupted save never leaves a partially written file. Before every
+read and every write the plugin verifies, with a single fixed-path `find`
+invocation run without a shell and with a cleared environment, that the state
+path is a regular file within a 1 MiB bound. If the path is a symlink, a
+directory, a device, or an oversized file, OmaGemba refuses to read or write it
+and reports the condition in its panel rather than following the path.
+
 ## Development validation
 
 ```sh
